@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet2" targetNamespace="http://tempuri.org/DataSet2.xsd" xmlns:mstns="http://tempuri.org/DataSet2.xsd" xmlns="http://tempuri.org/DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProgressiveMISConnectionString14" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProgressiveMISConnectionString14 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MIS_ProgressiveDistributors.Properties.Settings.GlobalReference.Default.ProgressiveMISConnectionString14" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProgressiveMISConnectionString16" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProgressiveMISConnectionString16 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MIS_ProgressiveDistributors.Properties.Settings.GlobalReference.Default.ProgressiveMISConnectionString16" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SalesTargetTableTableAdapter" GeneratorDataComponentClassName="SalesTargetTableTableAdapter" Name="SalesTargetTable" UserDataComponentName="SalesTargetTableTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProgressiveMISConnectionString14 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Edison_SalesTargetValue.SalesTargetID, Edison_SalesTargetValue.Date, Edison_SalesTargetValue.VanID, Edison_Van.VanName, Edison_SalesTargetValue.SalesTargetValue
+FROM            Edison_SalesTargetValue LEFT OUTER JOIN
+                         Edison_Van ON Edison_SalesTargetValue.VanID = Edison_Van.VanID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SalesTargetID" DataSetColumn="SalesTargetID" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="VanID" DataSetColumn="VanID" />
+              <Mapping SourceColumn="VanName" DataSetColumn="VanName" />
+              <Mapping SourceColumn="SalesTargetValue" DataSetColumn="SalesTargetValue" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RecoveryTargetTableTableAdapter" GeneratorDataComponentClassName="RecoveryTargetTableTableAdapter" Name="RecoveryTargetTable" UserDataComponentName="RecoveryTargetTableTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProgressiveMISConnectionString14 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>
+SELECT        Edison_RecoveryTargetValue.RecoveryTargetID, Edison_RecoveryTargetValue.Date, Edison_RecoveryTargetValue.VanID, Edison_Van.VanName, Edison_RecoveryTargetValue.RecoveryTargetValue
+FROM            Edison_RecoveryTargetValue LEFT OUTER JOIN
+                         Edison_Van ON Edison_RecoveryTargetValue.VanID = Edison_Van.VanID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RecoveryTargetID" DataSetColumn="RecoveryTargetID" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="VanID" DataSetColumn="VanID" />
+              <Mapping SourceColumn="VanName" DataSetColumn="VanName" />
+              <Mapping SourceColumn="RecoveryTargetValue" DataSetColumn="RecoveryTargetValue" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_Edison_ProductConsolidateTableAdapter" GeneratorDataComponentClassName="sp_Edison_ProductConsolidateTableAdapter" Name="sp_Edison_ProductConsolidate" UserDataComponentName="sp_Edison_ProductConsolidateTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProgressiveMISConnectionString16 (Settings)" DbObjectName="ProgressiveMIS.dbo.sp_Edison_ProductConsolidate" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.sp_Edison_ProductConsolidate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@FromDate" Precision="10" ProviderType="Date" Scale="0" Size="3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@ToDate" Precision="10" ProviderType="Date" Scale="0" Size="3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BrandName" DataSetColumn="BrandName" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="Qty" DataSetColumn="Qty" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp_Edison_ProductConsolidatePrevTableAdapter" GeneratorDataComponentClassName="sp_Edison_ProductConsolidatePrevTableAdapter" Name="sp_Edison_ProductConsolidatePrev" UserDataComponentName="sp_Edison_ProductConsolidatePrevTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProgressiveMISConnectionString16 (Settings)" DbObjectName="ProgressiveMIS.dbo.sp_Edison_ProductConsolidatePrev" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.sp_Edison_ProductConsolidatePrev</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@FromDate" Precision="10" ProviderType="Date" Scale="0" Size="3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="Prev" DataSetColumn="Prev" />
+              <Mapping SourceColumn="Curren" DataSetColumn="Curren" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DailySalesDetailsTableAdapter" GeneratorDataComponentClassName="DailySalesDetailsTableAdapter" Name="DailySalesDetails" UserDataComponentName="DailySalesDetailsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProgressiveMISConnectionString16 (Settings)" DbObjectName="ProgressiveMIS.dbo.DailySalesDetails" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.DailySalesDetails</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@FromDate" Precision="10" ProviderType="Date" Scale="0" Size="3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DispatchDate" DataSetColumn="DispatchDate" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Value" DataSetColumn="Value" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DailySalesDetailsPrevTableAdapter" GeneratorDataComponentClassName="DailySalesDetailsPrevTableAdapter" Name="DailySalesDetailsPrev" UserDataComponentName="DailySalesDetailsPrevTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProgressiveMISConnectionString16 (Settings)" DbObjectName="ProgressiveMIS.dbo.DailySalesDetailsPrev" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.DailySalesDetailsPrev</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@FromDate" Precision="10" ProviderType="Date" Scale="0" Size="3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DispatchDate" DataSetColumn="DispatchDate" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Value" DataSetColumn="Value" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet2" msprop:Generator_UserDSName="DataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SalesTargetTable" msprop:Generator_TableClassName="SalesTargetTableDataTable" msprop:Generator_TableVarName="tableSalesTargetTable" msprop:Generator_RowChangedName="SalesTargetTableRowChanged" msprop:Generator_TablePropName="SalesTargetTable" msprop:Generator_RowDeletingName="SalesTargetTableRowDeleting" msprop:Generator_RowChangingName="SalesTargetTableRowChanging" msprop:Generator_RowEvHandlerName="SalesTargetTableRowChangeEventHandler" msprop:Generator_RowDeletedName="SalesTargetTableRowDeleted" msprop:Generator_RowClassName="SalesTargetTableRow" msprop:Generator_UserTableName="SalesTargetTable" msprop:Generator_RowEvArgName="SalesTargetTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SalesTargetID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSalesTargetID" msprop:Generator_ColumnPropNameInRow="SalesTargetID" msprop:Generator_ColumnPropNameInTable="SalesTargetIDColumn" msprop:Generator_UserColumnName="SalesTargetID" type="xs:int" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VanID" msprop:Generator_ColumnVarNameInTable="columnVanID" msprop:Generator_ColumnPropNameInRow="VanID" msprop:Generator_ColumnPropNameInTable="VanIDColumn" msprop:Generator_UserColumnName="VanID" type="xs:int" minOccurs="0" />
+              <xs:element name="VanName" msprop:Generator_ColumnVarNameInTable="columnVanName" msprop:Generator_ColumnPropNameInRow="VanName" msprop:Generator_ColumnPropNameInTable="VanNameColumn" msprop:Generator_UserColumnName="VanName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalesTargetValue" msprop:Generator_ColumnVarNameInTable="columnSalesTargetValue" msprop:Generator_ColumnPropNameInRow="SalesTargetValue" msprop:Generator_ColumnPropNameInTable="SalesTargetValueColumn" msprop:Generator_UserColumnName="SalesTargetValue" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RecoveryTargetTable" msprop:Generator_TableClassName="RecoveryTargetTableDataTable" msprop:Generator_TableVarName="tableRecoveryTargetTable" msprop:Generator_RowChangedName="RecoveryTargetTableRowChanged" msprop:Generator_TablePropName="RecoveryTargetTable" msprop:Generator_RowDeletingName="RecoveryTargetTableRowDeleting" msprop:Generator_RowChangingName="RecoveryTargetTableRowChanging" msprop:Generator_RowEvHandlerName="RecoveryTargetTableRowChangeEventHandler" msprop:Generator_RowDeletedName="RecoveryTargetTableRowDeleted" msprop:Generator_RowClassName="RecoveryTargetTableRow" msprop:Generator_UserTableName="RecoveryTargetTable" msprop:Generator_RowEvArgName="RecoveryTargetTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RecoveryTargetID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRecoveryTargetID" msprop:Generator_ColumnPropNameInRow="RecoveryTargetID" msprop:Generator_ColumnPropNameInTable="RecoveryTargetIDColumn" msprop:Generator_UserColumnName="RecoveryTargetID" type="xs:int" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VanID" msprop:Generator_ColumnVarNameInTable="columnVanID" msprop:Generator_ColumnPropNameInRow="VanID" msprop:Generator_ColumnPropNameInTable="VanIDColumn" msprop:Generator_UserColumnName="VanID" type="xs:int" minOccurs="0" />
+              <xs:element name="VanName" msprop:Generator_ColumnVarNameInTable="columnVanName" msprop:Generator_ColumnPropNameInRow="VanName" msprop:Generator_ColumnPropNameInTable="VanNameColumn" msprop:Generator_UserColumnName="VanName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RecoveryTargetValue" msprop:Generator_ColumnVarNameInTable="columnRecoveryTargetValue" msprop:Generator_ColumnPropNameInRow="RecoveryTargetValue" msprop:Generator_ColumnPropNameInTable="RecoveryTargetValueColumn" msprop:Generator_UserColumnName="RecoveryTargetValue" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CustomerLedgerPrintFromTo" msprop:Generator_TableClassName="CustomerLedgerPrintFromToDataTable" msprop:Generator_TableVarName="tableCustomerLedgerPrintFromTo" msprop:Generator_TablePropName="CustomerLedgerPrintFromTo" msprop:Generator_RowDeletingName="CustomerLedgerPrintFromToRowDeleting" msprop:Generator_RowChangingName="CustomerLedgerPrintFromToRowChanging" msprop:Generator_RowEvHandlerName="CustomerLedgerPrintFromToRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerLedgerPrintFromToRowDeleted" msprop:Generator_UserTableName="CustomerLedgerPrintFromTo" msprop:Generator_RowChangedName="CustomerLedgerPrintFromToRowChanged" msprop:Generator_RowEvArgName="CustomerLedgerPrintFromToRowChangeEvent" msprop:Generator_RowClassName="CustomerLedgerPrintFromToRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Detail" msprop:Generator_ColumnVarNameInTable="columnDetail" msprop:Generator_ColumnPropNameInRow="Detail" msprop:Generator_ColumnPropNameInTable="DetailColumn" msprop:Generator_UserColumnName="Detail" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceNo" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" msprop:Generator_UserColumnName="InvoiceNo" type="xs:string" minOccurs="0" />
+              <xs:element name="VchNo" msprop:Generator_ColumnVarNameInTable="columnVchNo" msprop:Generator_ColumnPropNameInRow="VchNo" msprop:Generator_ColumnPropNameInTable="VchNoColumn" msprop:Generator_UserColumnName="VchNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Discount" msprop:Generator_ColumnVarNameInTable="columnDiscount" msprop:Generator_ColumnPropNameInRow="Discount" msprop:Generator_ColumnPropNameInTable="DiscountColumn" msprop:Generator_UserColumnName="Discount" type="xs:string" minOccurs="0" />
+              <xs:element name="NetAmount" msprop:Generator_ColumnVarNameInTable="columnNetAmount" msprop:Generator_ColumnPropNameInRow="NetAmount" msprop:Generator_ColumnPropNameInTable="NetAmountColumn" msprop:Generator_UserColumnName="NetAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="CashPaid" msprop:Generator_ColumnVarNameInTable="columnCashPaid" msprop:Generator_ColumnPropNameInRow="CashPaid" msprop:Generator_ColumnPropNameInTable="CashPaidColumn" msprop:Generator_UserColumnName="CashPaid" type="xs:string" minOccurs="0" />
+              <xs:element name="WriteOff" msprop:Generator_ColumnVarNameInTable="columnWriteOff" msprop:Generator_ColumnPropNameInRow="WriteOff" msprop:Generator_ColumnPropNameInTable="WriteOffColumn" msprop:Generator_UserColumnName="WriteOff" type="xs:string" minOccurs="0" />
+              <xs:element name="Balance" msprop:Generator_ColumnVarNameInTable="columnBalance" msprop:Generator_ColumnPropNameInRow="Balance" msprop:Generator_ColumnPropNameInTable="BalanceColumn" msprop:Generator_UserColumnName="Balance" type="xs:string" minOccurs="0" />
+              <xs:element name="Color" msprop:Generator_ColumnVarNameInTable="columnColor" msprop:Generator_ColumnPropNameInRow="Color" msprop:Generator_ColumnPropNameInTable="ColorColumn" msprop:Generator_UserColumnName="Color" type="xs:string" minOccurs="0" />
+              <xs:element name="CustID" msprop:Generator_ColumnVarNameInTable="columnCustID" msprop:Generator_ColumnPropNameInRow="CustID" msprop:Generator_ColumnPropNameInTable="CustIDColumn" msprop:Generator_UserColumnName="CustID" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_UserColumnName="CustomerName" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerAddress" msprop:Generator_ColumnVarNameInTable="columnCustomerAddress" msprop:Generator_ColumnPropNameInRow="CustomerAddress" msprop:Generator_ColumnPropNameInTable="CustomerAddressColumn" msprop:Generator_UserColumnName="CustomerAddress" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sp_Edison_ProductConsolidate" msprop:Generator_TableClassName="sp_Edison_ProductConsolidateDataTable" msprop:Generator_TableVarName="tablesp_Edison_ProductConsolidate" msprop:Generator_RowChangedName="sp_Edison_ProductConsolidateRowChanged" msprop:Generator_TablePropName="sp_Edison_ProductConsolidate" msprop:Generator_RowDeletingName="sp_Edison_ProductConsolidateRowDeleting" msprop:Generator_RowChangingName="sp_Edison_ProductConsolidateRowChanging" msprop:Generator_RowEvHandlerName="sp_Edison_ProductConsolidateRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_Edison_ProductConsolidateRowDeleted" msprop:Generator_RowClassName="sp_Edison_ProductConsolidateRow" msprop:Generator_UserTableName="sp_Edison_ProductConsolidate" msprop:Generator_RowEvArgName="sp_Edison_ProductConsolidateRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BrandName" msprop:Generator_ColumnVarNameInTable="columnBrandName" msprop:Generator_ColumnPropNameInRow="BrandName" msprop:Generator_ColumnPropNameInTable="BrandNameColumn" msprop:Generator_UserColumnName="BrandName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Qty" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sp_Edison_ProductConsolidatePrev" msprop:Generator_TableClassName="sp_Edison_ProductConsolidatePrevDataTable" msprop:Generator_TableVarName="tablesp_Edison_ProductConsolidatePrev" msprop:Generator_RowChangedName="sp_Edison_ProductConsolidatePrevRowChanged" msprop:Generator_TablePropName="sp_Edison_ProductConsolidatePrev" msprop:Generator_RowDeletingName="sp_Edison_ProductConsolidatePrevRowDeleting" msprop:Generator_RowChangingName="sp_Edison_ProductConsolidatePrevRowChanging" msprop:Generator_RowEvHandlerName="sp_Edison_ProductConsolidatePrevRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_Edison_ProductConsolidatePrevRowDeleted" msprop:Generator_RowClassName="sp_Edison_ProductConsolidatePrevRow" msprop:Generator_UserTableName="sp_Edison_ProductConsolidatePrev" msprop:Generator_RowEvArgName="sp_Edison_ProductConsolidatePrevRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Prev" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPrev" msprop:Generator_ColumnPropNameInRow="Prev" msprop:Generator_ColumnPropNameInTable="PrevColumn" msprop:Generator_UserColumnName="Prev" type="xs:int" minOccurs="0" />
+              <xs:element name="Curren" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCurren" msprop:Generator_ColumnPropNameInRow="Curren" msprop:Generator_ColumnPropNameInTable="CurrenColumn" msprop:Generator_UserColumnName="Curren" type="xs:int" minOccurs="0" />
+              <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DailySalesDetails" msprop:Generator_TableClassName="DailySalesDetailsDataTable" msprop:Generator_TableVarName="tableDailySalesDetails" msprop:Generator_RowChangedName="DailySalesDetailsRowChanged" msprop:Generator_TablePropName="DailySalesDetails" msprop:Generator_RowDeletingName="DailySalesDetailsRowDeleting" msprop:Generator_RowChangingName="DailySalesDetailsRowChanging" msprop:Generator_RowEvHandlerName="DailySalesDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="DailySalesDetailsRowDeleted" msprop:Generator_RowClassName="DailySalesDetailsRow" msprop:Generator_UserTableName="DailySalesDetails" msprop:Generator_RowEvArgName="DailySalesDetailsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DispatchDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDispatchDate" msprop:Generator_ColumnPropNameInRow="DispatchDate" msprop:Generator_ColumnPropNameInTable="DispatchDateColumn" msprop:Generator_UserColumnName="DispatchDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Value" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DailySalesDetailsPrev" msprop:Generator_TableClassName="DailySalesDetailsPrevDataTable" msprop:Generator_TableVarName="tableDailySalesDetailsPrev" msprop:Generator_RowChangedName="DailySalesDetailsPrevRowChanged" msprop:Generator_TablePropName="DailySalesDetailsPrev" msprop:Generator_RowDeletingName="DailySalesDetailsPrevRowDeleting" msprop:Generator_RowChangingName="DailySalesDetailsPrevRowChanging" msprop:Generator_RowEvHandlerName="DailySalesDetailsPrevRowChangeEventHandler" msprop:Generator_RowDeletedName="DailySalesDetailsPrevRowDeleted" msprop:Generator_RowClassName="DailySalesDetailsPrevRow" msprop:Generator_UserTableName="DailySalesDetailsPrev" msprop:Generator_RowEvArgName="DailySalesDetailsPrevRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DispatchDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDispatchDate" msprop:Generator_ColumnPropNameInRow="DispatchDate" msprop:Generator_ColumnPropNameInTable="DispatchDateColumn" msprop:Generator_UserColumnName="DispatchDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Value" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SalesTargetTable" />
+      <xs:field xpath="mstns:SalesTargetID" />
+    </xs:unique>
+    <xs:unique name="RecoveryTargetTable_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RecoveryTargetTable" />
+      <xs:field xpath="mstns:RecoveryTargetID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

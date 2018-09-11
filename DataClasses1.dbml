@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ProgressiveMIS" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-V0QEM882\SQLEXPRESS;Initial Catalog=ProgressiveMIS;Integrated Security=True" SettingsObjectName="MIS_ProgressiveDistributors.Properties.Settings" SettingsPropertyName="ProgressiveMISConnectionString18" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.All_BankAccountsTable" Member="All_BankAccountsTables">
+    <Type Name="All_BankAccountsTable">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="BankID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Branch" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="BranchCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OpeningBalance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SystemDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SystemName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Discountinued" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NTN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_VanAssigned" Member="Edison_VanAssigneds">
+    <Type Name="Edison_VanAssigned">
+      <Column Name="VanAssignID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VanID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.All_BankAccountsWithdrawal" Member="All_BankAccountsWithdrawals">
+    <Type Name="All_BankAccountsWithdrawal">
+      <Column Name="BankWithDrawID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BankID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BalanceBefore" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ChequeAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TaxDeduction" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LoggedByCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.All_BankDeposit" Member="All_BankDeposits">
+    <Type Name="All_BankDeposit">
+      <Column Name="BankDepositID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BankID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepositedAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TaxAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LoggedByCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.All_Banks" Member="All_Banks">
+    <Type Name="All_Bank">
+      <Column Name="BankID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.All_City" Member="All_Cities">
+    <Type Name="All_City">
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.All_Country" Member="All_Countries">
+    <Type Name="All_Country">
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.All_Customers" Member="All_Customers">
+    <Type Name="All_Customer">
+      <Column Name="CustID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CustomerAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OpeningBalance1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OpeningBalance2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OpeningBalance3" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VanID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EditedSystemDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EditedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OpeningBalance1Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.All_CustomersPhone" Member="All_CustomersPhones">
+    <Type Name="All_CustomersPhone">
+      <Column Name="CustomerPhoneID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TitleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PersonName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsertedSystemDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.All_PhoneTitle" Member="All_PhoneTitles">
+    <Type Name="All_PhoneTitle">
+      <Column Name="TitleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ClearingAgent" Member="Edison_ClearingAgents">
+    <Type Name="Edison_ClearingAgent">
+      <Column Name="ClearingAgentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClearingAgentName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ClearingAgentExpenseList" Member="Edison_ClearingAgentExpenseLists">
+    <Type Name="Edison_ClearingAgentExpenseList">
+      <Column Name="CA_ExpenseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CA_ExpenseName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ClearingAgentINV_DTL" Member="Edison_ClearingAgentINV_DTLs">
+    <Type Name="Edison_ClearingAgentINV_DTL">
+      <Column Name="CA_InvDTL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ExpenseListID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpenseAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CA_InvID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ClearingAgentINV_HDR" Member="Edison_ClearingAgentINV_HDRs">
+    <Type Name="Edison_ClearingAgentINV_HDR">
+      <Column Name="CA_InvID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ClearingAgentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_Departments" Member="Edison_Departments">
+    <Type Name="Edison_Department">
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartmentName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_Designation" Member="Edison_Designations">
+    <Type Name="Edison_Designation">
+      <Column Name="DesignationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DesignationName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_DispatchDTL" Member="Edison_DispatchDTLs">
+    <Type Name="Edison_DispatchDTL">
+      <Column Name="Dispatch_DTL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockIssued" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockReturn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalDelivered" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DispatchNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SalesReturn_DTL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SalesReturnID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RQtySold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RRSSale" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="WQtySold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WSaleRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="WValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PurchaseValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_DispatchExpDTL" Member="Edison_DispatchExpDTLs">
+    <Type Name="Edison_DispatchExpDTL">
+      <Column Name="Expense_DTL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DispatchNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpenseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_DispatchExpHDR" Member="Edison_DispatchExpHDRs">
+    <Type Name="Edison_DispatchExpHDR">
+      <Column Name="Expense_HDR_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DispatchNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_DispatchHDR" Member="Edison_DispatchHDRs">
+    <Type Name="Edison_DispatchHDR">
+      <Column Name="DispatchNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DispatchDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VanID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReadingOut" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ReadingIn" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="InsertedSystemDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalRSSale" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalWSSale" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ProductiveCall" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CashReceived" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RemainingAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_DispatchPayment" Member="Edison_DispatchPayments">
+    <Type Name="Edison_DispatchPayment">
+      <Column Name="PaymentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CustID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="WriteOff" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DispatchNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VanNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_EmployeeData" Member="Edison_EmployeeDatas">
+    <Type Name="Edison_EmployeeData">
+      <Column Name="GeneralID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="eImageFace" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="eImageCNICF" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="eImageCNICB" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_EmployeeInfo" Member="Edison_EmployeeInfos">
+    <Type Name="Edison_EmployeeInfo">
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MotherName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CNIC" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="CurrentAddress" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Education" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DesignationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JoinDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LeavingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefferedBy" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="BasicSalary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Percentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TotalAdvanceAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_EmployeePhoneDetail" Member="Edison_EmployeePhoneDetails">
+    <Type Name="Edison_EmployeePhoneDetail">
+      <Column Name="EmployeePhoneID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeePerson" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_EmpSalary" Member="Edison_EmpSalaries">
+    <Type Name="Edison_EmpSalary">
+      <Column Name="SalaryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sMonth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BasicPay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExtraDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OvertimeHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalOvertime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OtherPay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrossPay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdvanceDeduction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BalanceAdvance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OtherDeduction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NetPay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Advance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MarkPaid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarkPaidDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_Expense" Member="Edison_Expenses">
+    <Type Name="Edison_Expense">
+      <Column Name="ExpenseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ExpenseDescription" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ImportCDDTL" Member="Edison_ImportCDDTLs">
+    <Type Name="Edison_ImportCDDTL">
+      <Column Name="CD_DTL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DTLID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CDPercentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CDValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="STPercentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="STValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MISC" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RDPercentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RDValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ITPercentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ITValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalTaxes" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalTaxesPerPiece" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Carriage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CarraigePerPiece" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Other" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OtherPerPiece" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="REPPercentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="REPValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="USPercentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="USValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalExpense" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ExpPerPCS" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EdisonImportOrderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ImportCDHDR" Member="Edison_ImportCDHDRs">
+    <Type Name="Edison_ImportCDHDR">
+      <Column Name="CD_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalExpense" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ImportCostingDTL" Member="Edison_ImportCostingDTLs">
+    <Type Name="Edison_ImportCostingDTL">
+      <Column Name="CostingDTL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QtyInCartons" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QtyInNos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RateInDollar" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValueInDollar" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DollarInRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValueInRs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValuePerPcs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ExpensePerPcs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SalePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ExpectedSaleValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ContainerCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalGP" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="GPPercentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OrderNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CostingID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ImportCostingHDR" Member="Edison_ImportCostingHDRs">
+    <Type Name="Edison_ImportCostingHDR">
+      <Column Name="CostingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArrivalDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ClearingAgentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalValueInDollar" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalValueInPak" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TaxesDuties" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Carriage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ClearingExpense" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LabourUnloading" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Insurance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LCComission" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalExpense" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="InsertedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ContainerNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LCNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BalanceLeft" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ImportOrderDTL" Member="Edison_ImportOrderDTLs">
+    <Type Name="Edison_ImportOrderDTL">
+      <Column Name="EdisonImportDTLID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QtyInCartons" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalQty" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RatesInDollar" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValueInDollar" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DollarRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValuePerPcs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalValueinRs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="EdisonImportOrderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ImportOrderHDR" Member="Edison_ImportOrderHDRs">
+    <Type Name="Edison_ImportOrderHDR">
+      <Column Name="EdisonImportOrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContainerNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LCNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ArrivalDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ImportPayment" Member="Edison_ImportPayments">
+    <Type Name="Edison_ImportPayment">
+      <Column Name="IMP_PaymentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AmountinDollar" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="WriteOff" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ExchangeRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AmountInRs" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="BankID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_InvoiceDTL" Member="Edison_InvoiceDTLs">
+    <Type Name="Edison_InvoiceDTL">
+      <Column Name="InvDTLID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DispatchNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OriginalRetailSaleRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OriginalWholeSaleRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OriginalPurchRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="InvoiceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_InvoiceHDR" Member="Edison_InvoiceHDRs">
+    <Type Name="Edison_InvoiceHDR">
+      <Column Name="InvoiceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DispatchNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountPercentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PrevBalance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="GrandTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_Products" Member="Edison_Products">
+    <Type Name="Edison_Product">
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductCode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ProductDescription" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ProductBrand" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductCategory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OpeningStocks" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PurchasePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RSSalePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WSSalePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OpeningReplace" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ProductsBrand" Member="Edison_ProductsBrands">
+    <Type Name="Edison_ProductsBrand">
+      <Column Name="EdBrandID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BrandName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ProductsCategory" Member="Edison_ProductsCategories">
+    <Type Name="Edison_ProductsCategory">
+      <Column Name="ProductCatID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_RecoveryTargetValue" Member="Edison_RecoveryTargetValues">
+    <Type Name="Edison_RecoveryTargetValue">
+      <Column Name="RecoveryTargetID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VanID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecoveryTargetValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="InsertedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_ReturnType" Member="Edison_ReturnTypes">
+    <Type Name="Edison_ReturnType">
+      <Column Name="ReturnTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReturnTypeName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_SalesReturnDTL" Member="Edison_SalesReturnDTLs">
+    <Type Name="Edison_SalesReturnDTL">
+      <Column Name="SalesReturn_DTL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReturnTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillDispatchNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BillQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ReturnQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SalesReturnID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_SalesReturnHDR" Member="Edison_SalesReturnHDRs">
+    <Type Name="Edison_SalesReturnHDR">
+      <Column Name="SalesReturnID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DispatchNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CustID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_SalesTargetValue" Member="Edison_SalesTargetValues">
+    <Type Name="Edison_SalesTargetValue">
+      <Column Name="SalesTargetID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VanID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SalesTargetValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="InsertedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_StockAdjustment" Member="Edison_StockAdjustments">
+    <Type Name="Edison_StockAdjustment">
+      <Column Name="StockAdjustmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="StockType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_SupplierPayment" Member="Edison_SupplierPayments">
+    <Type Name="Edison_SupplierPayment">
+      <Column Name="SupplierPaymentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="WriteOff" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="InsertedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_SupplierPurch_DTL" Member="Edison_SupplierPurch_DTLs">
+    <Type Name="Edison_SupplierPurch_DTL">
+      <Column Name="Edison_SP_DTLID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="DiscountValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Edison_SupplierPurchID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_SupplierPurch_HDR" Member="Edison_SupplierPurch_HDRs">
+    <Type Name="Edison_SupplierPurch_HDR">
+      <Column Name="Edison_SupplierPurchID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="InsertedSystemDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_SupplierPurchReturn_DTL" Member="Edison_SupplierPurchReturn_DTLs">
+    <Type Name="Edison_SupplierPurchReturn_DTL">
+      <Column Name="Edison_SPReturn_DTLID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="DiscountValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Edison_SupplierPurchID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_SupplierPurchReturn_HDR" Member="Edison_SupplierPurchReturn_HDRs">
+    <Type Name="Edison_SupplierPurchReturn_HDR">
+      <Column Name="Edison_SupplierPurchReturnID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="InsertedSystemDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_Suppliers" Member="Edison_Suppliers">
+    <Type Name="Edison_Supplier">
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SupplierName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SupplierAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SupplierCountry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SupplierType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OpeningBalance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Edison_Van" Member="Edison_Vans">
+    <Type Name="Edison_Van">
+      <Column Name="VanID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VanName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
